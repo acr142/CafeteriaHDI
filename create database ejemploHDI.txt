@@ -1,0 +1,46 @@
+create database ejemploHDI;
+
+create table Tb_HccOrdenes (
+ord_id PRIMARY KEY int Not Null,
+mes_id int not null,
+cator_id int not null,
+ord_fecha_inic date not null,
+ord_status tiny int not null,
+);
+
+create table Tb_HccOrdenesDetalle(
+orddet_id PRIMARY KEY int not null,
+ord_id int not null,
+pro_id int not null,
+orddet_cantidad small int not null,
+orddet_status tiny int not null,
+);
+
+create table Tb_HccCatEtatusOrden(
+catord_id PRIMARY KEY int not null,
+cator_nombre varchar(50) not null,
+cator_status tiny int not null
+);
+
+create table Tb_HccMesas(
+mes_id PRIMARY KEY int not null,
+mes_lugares small int not null,
+mes_disponible tiny int not null,
+mes_status tiny int not null
+);
+
+create table Tb_HccProductos(
+pro_id PRIMARY KEY int not null,
+alm_id int not null,
+pro_nombre varcahar(50) not null,
+pro_descripcion varchar(120) not null, 
+pro_precio decimal(10,4) not null,
+pro_status tiny not null
+);
+
+create table Tb_HccAlmacen(
+alm_id PRIMARY KEY int not null,
+alm_cantidad int not null,
+alm_fecha_actualizacion date not null,
+alm_status tiny int not null
+);
